@@ -17,40 +17,8 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			
-
-			$message_template = '{
-			  "type": "template",
-			  "altText": "this is a image carousel template",
-			  "template": {
-			      "type": "image_carousel",
-			      "columns": [
-			          {
-			            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
-			            "action": {
-			              "type": "postback",
-			              "label": "Buy",
-			              "data": "action=buy&itemid=111"
-			            }
-			          },
-			          {
-			            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
-			            "action": {
-			              "type": "message",
-			              "label": "Yes",
-			              "text": "yes"
-			            }
-			          },
-			          {
-			            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
-			            "action": {
-			              "type": "uri",
-			              "label": "View detail",
-			              "uri": "http://example.com/page/222"
-			            }
-			          }
-			      ]
-			  }
-			}';
+			$message_template = condition();
+			
 
 			// Build message to reply back
 			/*$messages = [
@@ -83,5 +51,123 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
+}
+
+//Select message
+function condition($text) {
+	switch ($text) {
+		case 'map':
+			return info_map();
+			break;
+
+		case 'info':
+			return location_message();
+			break;
+
+		case 'time':
+			return info_time();
+			break;
+		
+		default:
+			return 'Happy wedding naja...';
+			break;
+	}
+}
+
+
+function template_message() {
+	$msg = '{
+	  "type": "template",
+	  "altText": "this is a image carousel template",
+	  "template": {
+	      "type": "image_carousel",
+	      "columns": [
+	          {
+	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
+	            "action": {
+	              "type": "postback",
+	              "label": "Buy",
+	              "data": "action=buy&itemid=111"
+	            }
+	          },
+	          {
+	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
+	            "action": {
+	              "type": "message",
+	              "label": "Yes",
+	              "text": "yes"
+	            }
+	          },
+	          {
+	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
+	            "action": {
+	              "type": "uri",
+	              "label": "View detail",
+	              "uri": "http://example.com/page/222"
+	            }
+	          }
+	      ]
+	  }
+	}';
+
+	return $msg;
+}
+
+function info_map() {
+	return location_message();
+}
+
+function info_preview() {
+	$msg = '{
+	  "type": "template",
+	  "altText": "this is a image carousel template",
+	  "template": {
+	      "type": "image_carousel",
+	      "columns": [
+	          {
+	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
+	            "action": {
+	              "type": "postback",
+	              "label": "Buy",
+	              "data": "action=buy&itemid=111"
+	            }
+	          },
+	          {
+	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
+	            "action": {
+	              "type": "message",
+	              "label": "Yes",
+	              "text": "yes"
+	            }
+	          },
+	          {
+	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
+	            "action": {
+	              "type": "uri",
+	              "label": "View detail",
+	              "uri": "http://example.com/page/222"
+	            }
+	          }
+	      ]
+	  }
+	}';
+
+	return $msg;
+}
+
+function info_time() {
+	$msg = '3rd December 2017, at 12:00 noon';
+}
+
+function location_message() {
+	$msg = '{
+	    "type": "location",
+	    "title": "Buddy Oriental Riverside hotel",
+	    "address": "At Song-Fung-Klong restaurant, Buddy Oriental Riverside hotel, Parkkred, Nontaburi",
+	    "latitude": 13.927917,
+	    "longitude": 100.5006025
+	}';
+
+	return $msg;
 }
 echo "OK";
