@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			
-			$message_template = condition();
+			$message_template = condition($text);
 			
 
 			// Build message to reply back
