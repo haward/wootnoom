@@ -16,11 +16,50 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			
+
+			$message_template = {
+			  "type": "template",
+			  "altText": "this is a image carousel template",
+			  "template": {
+			      "type": "image_carousel",
+			      "columns": [
+			          {
+			            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
+			            "action": {
+			              "type": "postback",
+			              "label": "Buy",
+			              "data": "action=buy&itemid=111"
+			            }
+			          },
+			          {
+			            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
+			            "action": {
+			              "type": "message",
+			              "label": "Yes",
+			              "text": "yes"
+			            }
+			          },
+			          {
+			            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
+			            "action": {
+			              "type": "uri",
+			              "label": "View detail",
+			              "uri": "http://example.com/page/222"
+			            }
+			          }
+			      ]
+			  }
+			}
+
 			// Build message to reply back
-			$messages = [
+			/*$messages = [
 				'type' => 'text',
 				'text' => $text
-			];
+			];*/
+
+			// Build message to reply back
+			$messages = [$message_template];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
