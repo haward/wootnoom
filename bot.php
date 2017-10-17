@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 
 			
 			$message_template = condition($text);
-			
+			echo $message_template;
 
 			// Build message to reply back
 			/*$messages = [
@@ -69,7 +69,10 @@ function condition($text) {
 			break;
 		
 		default:
-			return 'Happy wedding naja...';
+			return '{
+				"type" : "text",
+				"text" : "Happy wedding"
+			}';
 			break;
 	}
 }
@@ -156,7 +159,11 @@ function info_preview() {
 }
 
 function info_time() {
-	$msg = '3rd December 2017, at 12:00 noon';
+	$msg = '{
+		"type" : "text",
+		"text" : "3rd December 2017, at 12:00 noon"
+	}';
+	return $msg;
 }
 
 function location_message() {
