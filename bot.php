@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 
 			
 
-			$message_template = {
+			$message_template = '{
 			  "type": "template",
 			  "altText": "this is a image carousel template",
 			  "template": {
@@ -50,7 +50,7 @@ if (!is_null($events['events'])) {
 			          }
 			      ]
 			  }
-			}
+			}';
 
 			// Build message to reply back
 			/*$messages = [
@@ -59,7 +59,7 @@ if (!is_null($events['events'])) {
 			];*/
 
 			// Build message to reply back
-			$messages = [$message_template];
+			$messages = json_decode($message_template, true);
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -68,6 +68,7 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
+			//echo $post;
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
