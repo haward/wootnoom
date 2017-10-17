@@ -57,11 +57,11 @@ if (!is_null($events['events'])) {
 function condition($text) {
 	switch ($text) {
 		case 'map':
-			return info_map();
+			return location_message();
 			break;
 
 		case 'info':
-			return location_message();
+			return template_message();
 			break;
 
 		case 'time':
