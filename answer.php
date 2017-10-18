@@ -91,12 +91,8 @@ class Answer {
 	function map_church() {
 		$msg = '
 		{
-			"type" : "text",
-			"text" : "Church map"
-		},
-		{
 		    "type": "location",
-		    "title": "Santa Cruz Church",
+		    "title": "Santa Cruz Church map",
 		    "address": "Thesaban Sai 1, Thon Buri, Bangkok Pak Klong Talard Pier",
 		    "latitude": 13.738994,
 		    "longitude": 100.493801
@@ -120,12 +116,8 @@ class Answer {
 			"text" : "' . $content[rand(0, count($content) - 1)] . '"
 		},
 		{
-			"type" : "text",
-			"text" : "Wedding Ceremony map"
-		},
-		{
 		    "type": "location",
-		    "title": "Buddy Oriental Riverside hotel",
+		    "title": "Wedding Ceremony map Buddy Oriental Riverside hotel",
 		    "address": "At Song-Fung-Klong restaurant, Buddy Oriental Riverside hotel, Parkkred, Nontaburi",
 		    "latitude": 13.927917,
 		    "longitude": 100.5006025

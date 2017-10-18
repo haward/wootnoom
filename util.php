@@ -61,7 +61,7 @@ class Util {
 				break;
 			
 			case 'info':
-				return '[' . $answer->gotAnswer() . ',' .  $answer->time_ceremony() . ',' . $answer->map_ceremony() . ']';
+				return '[' .  $answer->time_ceremony() . ',' . $answer->map_ceremony() . ']';
 				break;
 
 			case 'church_info':
