@@ -34,6 +34,7 @@ $CONFIGURATION =  array
 		'สราด',
 		'ระยำ',
 		'เสือก',
+		'เลว',
 	),
 	'picture' => array(
 		'picture',

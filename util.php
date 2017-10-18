@@ -51,8 +51,8 @@ class Util {
 
 	public function getAnswer($text) {
 		$action = $this->mapToAction($text);
-
-		if($action == '') $action = 'info';
+		
+		if($action == '') $action = 'no anwser';
 
 		$answer = new Answer();
 		switch ($action) {
