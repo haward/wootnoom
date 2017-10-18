@@ -102,6 +102,34 @@ class Answer {
 		return $msg;
 	}
 
+	function groom() {
+		$msgs = array(
+			'เจ้าบ่าวหล่อมาก ',
+			'เจ้าบ่าวหล่อใจดี สปอร์ต แมน เมืองช้าง',
+			'เจ้าบ่าววัยรุ่นมาก',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+		return $msg;
+	}
+
+	function bride() {
+		$msgs = array(
+			'สวยน่ารักดี',
+			'น่ารักมากจริงๆนะ',
+			'เจ้าสาวน่ารักค่า',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+		return $msg;
+	}
+
 	function food() {
 		$msgs = array(
 			'บุฟเฟ่ อาหารไทย ครับ',

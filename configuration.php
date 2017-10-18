@@ -43,6 +43,21 @@ $CONFIGURATION =  array
 		'จอดรถ',
 		'park',
 	),
+	'groom' => array(
+		'groom',
+		'เจ้าบ่าว',
+		'wut',
+		'woot',
+		'วุด',
+		'วุฒิ',
+	),
+	'bride' => array(
+		'bride',
+		'เจ้าสาว',
+		'นุ่ม',
+		'noom',
+		'มัสลิน',
+	),
 	'church_info' => array(
 		'โบส',
 		'church',

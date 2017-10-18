@@ -88,6 +88,14 @@ class Util {
 				return '[' . $answer->food() . ']';
 				break;
 
+			case 'groom':
+				return '[' . $answer->groom() . ']';
+				break;
+
+			case 'bride':
+				return '[' . $answer->bride() . ']';
+				break;
+
 			case 'park':
 				return '[' . $answer->park() . ']';
 				break;
