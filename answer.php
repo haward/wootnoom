@@ -63,8 +63,8 @@ class Answer {
 	function church_park() {
 		$msgs = array(
 			'จอดได้รอบโบส Santa Cruz Church เลยครับ',
-			'จอดที่ Santa Cruz Church เลยครับ',
-			'Santa Cruz Church เลยครับ',
+			'จอดที่ ลาดจอดรอบโบสถ์ Santa Cruz Church เลยครับ',
+			'ลานรอบๆ Santa Cruz Church เลยครับ',
 		);
 
 		$msg = '{
@@ -79,6 +79,20 @@ class Answer {
 			'สีพาสเทล',
 			'แต่งตัวสุภาพ สีพาสเทล',
 			'แต่งตัวตามสบาย สีพาสเทล',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+		return $msg;
+	}
+
+	function food() {
+		$msgs = array(
+			'บุฟเฟ่ อาหารไทย ครับ',
+			'เป็น บุฟเฟ่ อาหารไทย นะครับ',
+			'บุฟเฟ่ อาหารไทย นะครับ',
 		);
 
 		$msg = '{
@@ -103,18 +117,7 @@ class Answer {
 
 	function map_ceremony() {
 
-		$content = array(
-			'ตอนแรกกะเอา สนามราชมังคลา แต่เค้าไม่ให้เลยเปลี่ยนเป็น
-ณ ห้องอาหารสองฝั่งคลอง โรงแรมบัดดี้ ออเรียลทัล ริเวอร์ไซด์ (Buddy oriental riverside hotel) ',
-			'โรงแรมบัดดี้ ออเรียลทัล ริเวอร์ไซด์ (Buddy oriental riverside hotel)',
-			'Buddy oriental riverside hotel',
-		);
-
 		$msg = '
-		{
-			"type" : "text",
-			"text" : "' . $content[rand(0, count($content) - 1)] . '"
-		},
 		{
 		    "type": "location",
 		    "title": "Wedding Ceremony map Buddy Oriental Riverside hotel",

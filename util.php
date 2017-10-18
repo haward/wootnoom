@@ -83,6 +83,14 @@ class Util {
 			case 'ch_park':
 				return '[' . $answer->church_park() . ']';
 				break;
+			
+			case 'food':
+				return '[' . $answer->food() . ']';
+				break;
+
+			case 'park':
+				return '[' . $answer->park() . ']';
+				break;
 
 			case 'disturb':
 				return '[' . $answer->disturb() . ']';

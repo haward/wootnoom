@@ -34,6 +34,11 @@ $CONFIGURATION =  array
 	'ch_park' => array(
 		'ch_park',
 	),
+	'food' => array(
+		'food',
+		'อาหาร',
+		'ของกิน',
+	),
 	'park' => array(
 		'จอดรถ',
 		'park',
