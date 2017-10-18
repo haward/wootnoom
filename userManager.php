@@ -23,4 +23,14 @@ class UserManager {
 	public function writeUser() {
 		file_put_contents($this->file_name, json_encode($this->users));
 	}
+
+	public function getUserKey() {
+		$users = array();
+		
+		foreach($this->users as $userId => $value) {
+			$users[] = $userId;
+		}
+
+		return $users;
+	}
 }

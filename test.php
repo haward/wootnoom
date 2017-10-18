@@ -24,4 +24,4 @@ $user = new User();
 $user->name = "user b";
 $user->userId = "key 1";
 //$userManager->addUser($user);
-print_r($userManager->users);
+print_r($userManager->getUserKey());
