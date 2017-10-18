@@ -43,6 +43,7 @@ class Answer {
 		$msgs = array(
 			'don\' understand',
 			'ไม่เข้าใจเลย',
+			'ต้องการความช่วยเหลือรึเปล่า',
 			'ถามคำถามใหม่หน่อยครับ'
 		);
 
@@ -57,7 +58,7 @@ class Answer {
 		$msg = '
 		{
 			"type" : "text",
-			"text" : "Church"
+			"text" : "Church map"
 		},
 		{
 		    "type": "location",
@@ -74,7 +75,7 @@ class Answer {
 		$msg = '
 		{
 			"type" : "text",
-			"text" : "Wedding Ceremony"
+			"text" : "Wedding Ceremony map"
 		},
 		{
 		    "type": "location",
@@ -90,12 +91,17 @@ class Answer {
 	function time_church() {
 
 		$msgs = array(
-			'Church: 2 December 2017, at 14:00 noon',
-			'งานโบสถ์: วันที่ 2 ธันวาคม 2560 เวลา 14:00 นะครับ',
-			'งานโบสถ์: งานแต่ง ที่ 2 ธันวาคม 2560 เวลา บ่ายสองครับ'
+			'2 December 2017, at 14:00 noon',
+			'วันที่ 2 ธันวาคม 2560 เวลา 14:00 นะครับ',
+			'งานแต่ง ที่ 2 ธันวาคม 2560 เวลา บ่ายสองครับ'
 		);
 
-		$msg = '{
+		$msg = '
+		{
+			"type" : "text",
+			"text" : "เวลางานโบสถ์"
+		},
+		{
 			"type" : "text",
 			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
 		}';
@@ -112,7 +118,12 @@ class Answer {
 			'งานแต่ง: ที่ 3 ธันวาคม 2560 เวลา เที่ยงตรงครับ'
 		);
 
-		$msg = '{
+		$msg = '
+		{
+			"type" : "text",
+			"text" : "เวลางานเลี้ยง"
+		},
+		{
 			"type" : "text",
 			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
 		}';
