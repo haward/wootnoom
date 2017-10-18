@@ -11,7 +11,8 @@ require_once("util.php");
 
 $util = new Util($CONFIGURATION);
 
-$text = "ภาพ และแผนที่";
+//$text = "ภาพ และแผนที่";
+$text = "dfds";
 
 $answer_message = $util->getAnswer($text);
 	//$message_template = condition($text);

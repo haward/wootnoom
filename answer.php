@@ -2,10 +2,53 @@
 class Answer {
 
 
-	function Greeting() {
+	function gotAnswer() {
+
+		$msgs = array(
+			'นี้คือข้อมูลที่คุณขอ',
+			'Sure',
+			'เราเตรียมข้อมูลให้คุณแล้ว'
+		);
+
 		$msg = '{
 			"type" : "text",
-			"text" : "ผมไม่เข้าใจที่คุณพูดเบย"
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+
+		return $msg;
+	}
+
+	function disturb() {
+
+		$msgs = array(
+			'สุภาพหน่อยครับ',
+			'พูดดีๆหน่อยซิ',
+			'เราเป็นคนพูดเรพาะนะแสรดด',
+			'เราไม่พูดกับนายล่ะ',
+			'พูดแบบนี้ไม่ดีนะค่ะ',
+			'ให้โอกาสอีกครั้งนะ',
+			'เพลียจัง',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+
+		return $msg;
+	}
+
+
+	function dont_know() {
+		$msgs = array(
+			'don\' understand',
+			'ไม่เข้าใจเลย',
+			'ถามคำถามใหม่หน่อยครับ'
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
 		}';
 		return $msg;
 	}
@@ -23,10 +66,18 @@ class Answer {
 	}
 
 	function time() {
+
+		$msgs = array(
+			'3rd December 2017, at 12:00 noon',
+			'วันที่ 3 ธันวาคม 2560 เวลา 12:00 ตอนเที่ยงตรงนะครับ',
+			'งานแต่ง ที่ 3 ธันวาคม 2560 เวลา เที่ยงตรงครับ'
+		);
+
 		$msg = '{
 			"type" : "text",
-			"text" : "3rd December 2017, at 12:00 noon"
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
 		}';
+
 		return $msg;
 	}
 

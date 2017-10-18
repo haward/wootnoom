@@ -56,7 +56,7 @@ class Util {
 		$answer = new Answer();
 		switch ($action) {
 			case 'map':
-				return '[' . $answer->Greeting() . ',' . $answer->map() . ']';
+				return '[' . $answer->gotAnswer() . ',' . $answer->map() . ']';
 				break;
 
 			case 'time':
@@ -65,8 +65,11 @@ class Util {
 			case 'picture':
 				return '[' . $answer->picture() . ']';
 				break;
+			case 'disturb':
+				return '[' . $answer->disturb() . ']';
+				break;
 			default:
-				return '[' . $answer->Greeting() . ']';
+				return '[' . $answer->dont_know() . ']';
 				break;
 		}
 	}
