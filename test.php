@@ -24,4 +24,6 @@ $user = new User();
 $user->name = "user b";
 $user->userId = "key 1";
 //$userManager->addUser($user);
-print_r($userManager->getUserKey());
+//print_r($userManager->getUserKey());
+
+echo date('l jS \of F Y h:i:s A');
