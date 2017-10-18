@@ -134,7 +134,7 @@ class Answer {
 	function picture() {
 		$msg = '{
 		  "type": "template",
-		  "altText": "this is a image carousel template",
+		  "altText": "รูปการเตรียมงาน",
 		  "template": {
 		      "type": "image_carousel",
 		      "columns": [
@@ -142,21 +142,24 @@ class Answer {
 		            "imageUrl": "https://wootnoom.herokuapp.com/media/w5.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "งานแต่ง"
+		              "label": "งานแต่ง",
+		              "text": "info"
 		            }
 		          },
 		          {
 		            "imageUrl": "https://wootnoom.herokuapp.com/media/w1.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "เตรียมงาน"
+		              "label": "เตรียมงาน",
+		              "text": "info"
 		            }
 		          },
 		          {
 		            "imageUrl": "https://wootnoom.herokuapp.com/media/w2.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "เตรียมงาน"
+		              "label": "เตรียมงาน",
+		              "text": "info"
 		            }
 		          }
 		      ]
