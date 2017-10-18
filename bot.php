@@ -7,6 +7,8 @@
 //error_reporting(E_ERROR);
 require_once ("configuration.php");
 require_once("util.php");
+require_once("user.php");
+require_once("userManager.php");
 
 $util = new Util($CONFIGURATION);
 
@@ -25,6 +27,17 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+
+			// Get source
+			$userId = $event['source']['userId'];
+			// Add userId to json file
+			$userManager = new userManager();
+			$user = new User();
+			$user->name = "";
+			$user->userId = $userId;
+			$userManager->addUser($user);
+
+
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 

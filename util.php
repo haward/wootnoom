@@ -9,13 +9,14 @@ use AhoCorasick\MultiStringMatcher;
 class Util {
 
 	public $configuration = array();
+	public $file_name = "user.json";
 
 	function __construct($configuration) {
 		$this->configuration = $configuration;
 	}
 
 	function mapToAction($text) {
-		$map = $this->build_mapp($this->configuration);
+		$map = $this->buildMapp($this->configuration);
 		$result = $this->convert($text, $map);
 		print_r($result);
 		$actions = array();
@@ -132,7 +133,7 @@ class Util {
 		return $tree->match($text);*/
 	}
 
-	private function build_mapp($configuration) {
+	private function buildMapp($configuration) {
 		$keys = array();
 		foreach($configuration as $action => $keywords) {
 			foreach($keywords as $keyword) {
@@ -142,4 +143,6 @@ class Util {
 
 		return $keys;
 	}
+
+	
 }

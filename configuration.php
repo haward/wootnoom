@@ -72,6 +72,7 @@ $CONFIGURATION =  array
 		'ระยำ',
 		'เสือก',
 		'เลว',
+		'stupid',
 	),
 	'picture' => array(
 		'picture',
