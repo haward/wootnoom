@@ -56,17 +56,17 @@ class Util {
 		$answer = new Answer();
 		switch ($action) {
 			case 'map':
-				return $answer->map();
+				return '[' . $answer->Greeting() . ',' . $answer->map() . ']';
 				break;
 
 			case 'time':
-				return $answer->time();
+				return '[' . $answer->time() . ']';
 				break;	
 			case 'picture':
-				return $answer->picture();
+				return '[' . $answer->picture() . ']';
 				break;
 			default:
-				return $answer->time();
+				return '[' . $answer->Greeting() . ']';
 				break;
 		}
 	}

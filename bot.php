@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 
 			$answer_message = $util->getAnswer($text);
 			//$message_template = condition($text);
-		echo $answer_message;
+			//print_r( $answer_message );
 
 			// Build message to reply back
 			/*$messages = [
@@ -49,10 +49,10 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => $messages,
 			];
 			$post = json_encode($data);
-			//echo $post;
+			echo $post;
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);

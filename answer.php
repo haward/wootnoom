@@ -1,6 +1,15 @@
 <?php
 class Answer {
 
+
+	function Greeting() {
+		$msg = '{
+			"type" : "text",
+			"text" : "ผมไม่เข้าใจที่คุณพูดเบย"
+		}';
+		return $msg;
+	}
+
 	function map() {
 		$msg = '{
 		    "type": "location",
