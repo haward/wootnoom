@@ -20,6 +20,23 @@ $CONFIGURATION =  array
 	'info' => array(
 		'กำหนดการ',
 		'พีธี',
+		'info',
+		'งง',
+		'ไม่เข้าใจ',
+		'ช่วยด้วย',
+	),
+	'theme' => array(
+		'theme',
+		'แต่งตัว',
+		'ชุด',
+		'ใส่อะไร',
+	),
+	'church_park' => array(
+		'church_park',
+	),
+	'park' => array(
+		'จอดรถ',
+		'park',
 	),
 	'church_info' => array(
 		'โบส',

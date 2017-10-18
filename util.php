@@ -75,6 +75,15 @@ class Util {
 			case 'picture':
 				return '[' . $answer->picture() . ']';
 				break;
+
+			case 'theme':
+				return '[' . $answer->theme() . ']';
+				break;
+
+			case 'church_park':
+				return '[' . $answer->church_park() . ']';
+				break;
+
 			case 'disturb':
 				return '[' . $answer->disturb() . ']';
 				break;

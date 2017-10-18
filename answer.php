@@ -25,7 +25,7 @@ class Answer {
 		$msgs = array(
 			'สุภาพหน่อยครับ',
 			'พูดดีๆหน่อยซิ',
-			'เราเป็นคนพูดเรพาะนะแสรดด',
+			'เราเป็นคนพูดเพราะนะแสรดด',
 			'เราไม่พูดกับนายล่ะ',
 			'พูดแบบนี้ไม่ดีนะค่ะ',
 			'ให้โอกาสอีกครั้งนะ',
@@ -43,13 +43,44 @@ class Answer {
 
 	function dont_know() {
 		$msgs = array(
-			'don\' understand',
+			'Do not understand',
 			'ไม่เข้าใจเลย',
 			'ต้องการความช่วยเหลือรึเปล่า',
 			'ขอคำถามง่ายๆหน่อยนะ',
 			'ลองกดจาก menu ด้านล่างดูก่อนดีไหม๊',
 			'ไม่รู้เหมือนกัน เดียวจะไปถามเจ้าบ่าวให้',
 			'ถามคำถามใหม่หน่อยครับ'
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+		return $msg;
+	}
+
+	
+	function church_park() {
+		$msgs = array(
+			'จอดได้รอบโบส Santa Cruz Church เลยครับ',
+			'จอดที่ Santa Cruz Church เลยครับ',
+			'Santa Cruz Church เลยครับ',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+		return $msg;
+	}
+
+	function theme() {
+		$msgs = array(
+			'สีพาสเทล',
+			'แต่งตัวสุภาพ สีพาสเทล',
+			'แต่งตัวตามสบาย สีพาสเทล',
+			'อยากได้แบบเรียบๆ แพงๆ',
+			'ถ้าไม่มีสีพาสเทล เราอยากได้ธีมที่พอใส่แล้วมันออกมามินิมัลๆ วิ้งๆๆว้าวๆ และเรียบหรูแต่ดูแพง ;) ล้อเล่นครับ มีชุดอะไรก็แต่งมาเถอะครับ อยากให้มาเจอกัน ',
 		);
 
 		$msg = '{
@@ -77,7 +108,19 @@ class Answer {
 	}
 
 	function map_ceremony() {
+
+		$content = array(
+			'ตอนแรกกะเอา สนามราชมังคลา แต่เค้าไม่ให้เลยเปลี่ยนเป็น
+ณ ห้องอาหารสองฝั่งคลอง โรงแรมบัดดี้ ออเรียลทัล ริเวอร์ไซด์ (Buddy oriental riverside hotel) ',
+			'โรงแรมบัดดี้ ออเรียลทัล ริเวอร์ไซด์ (Buddy oriental riverside hotel)',
+			'Buddy oriental riverside hotel',
+		);
+
 		$msg = '
+		{
+			"type" : "text",
+			"text" : "' . $content[rand(0, count($content) - 1)] . '"
+		},
 		{
 			"type" : "text",
 			"text" : "Wedding Ceremony map"
