@@ -26,4 +26,3 @@ $user->userId = "key 1";
 //$userManager->addUser($user);
 //print_r($userManager->getUserKey());
 
-echo date('l jS \of F Y h:i:s A');

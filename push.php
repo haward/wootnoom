@@ -10,6 +10,14 @@
 
 	$param = $_GET;
 
+	/*
+	echo date("j, n, Y");
+
+$day = date("j");
+$month = date("j");
+$year = date("Y");
+	*/
+
 	if(isset($param['data'])) {
 		$type = $param['data'];
 		$message = '';
@@ -64,5 +72,29 @@
 		echo 'parameter is incorrect : ?data=1';
 	}
 
+function checkDate() {
+
+	$valid = false;
+
+	$day = date("j");
+	$month = date("j");
+	$year = date("Y");
+
+
+	if($day == '1' && $month == '12' && $year == "2017") {
+		$valid = true;
+		$type  = 1;
+	}
+
+	if($day == '1' && $month == '12' && $year == "2017") {
+		$valid = true;
+		$type  = 2;
+	}
+
+
+	
+
+	
+}
 	
 
