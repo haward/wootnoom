@@ -1,4 +1,20 @@
 <?php
+
+// Turn off all error reporting
+error_reporting(0);
+
+// Report simple running errors
+error_reporting(E_ERROR);
+require_once ("configuration.php");
+//require_once ("ahocorasick.php");
+require_once("util.php");
+
+$util = new Util($CONFIGURATION);
+
+
+//echo $answer_message;
+//exit;
+
 $access_token = '4kQ/BkzMwQdHPsK3ndXIuAVuRlkljv89ikV0SlSRW+bgPOfmmm+nS47ZtN0okz8s7+Bad4yFcH/CibvXITr7qSS+vTTZE35Zoq5KtwtvkW0x1g9OGpG/fOM33rSEztsGqMWPyXZPYPHYjzCjiubdiQdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
@@ -16,9 +32,9 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			
-			$message_template = condition($text);
-			echo $message_template;
+			$answer_message = $util->getAnswer($text);
+			//$message_template = condition($text);
+			//echo $answer_message;
 
 			// Build message to reply back
 			/*$messages = [
@@ -27,7 +43,7 @@ if (!is_null($events['events'])) {
 			];*/
 
 			// Build message to reply back
-			$messages = json_decode($message_template, true);
+			$messages = json_decode($answer_message, true);
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
