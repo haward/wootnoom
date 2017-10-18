@@ -56,14 +56,23 @@ class Util {
 		$answer = new Answer();
 		switch ($action) {
 			case 'map':
-				return '[' . $answer->gotAnswer() . ',' . $answer->map() . ']';
+				return '[' . $answer->gotAnswer() . ',' . $answer->map_ceremony() . ']';
+				break;
+			
+			case 'info':
+				return '[' . $answer->gotAnswer() . ',' .  $answer->time_ceremony() . ',' . $answer->map_ceremony() . ']';
+				break;
+
+			case 'church_info':
+				return '[' . $answer->gotAnswer() . ',' .  $answer->time_church() . ',' . $answer->map_church() . ']';
 				break;
 
 			case 'time':
-				return '[' . $answer->time() . ']';
+				return '[' . $answer->gotAnswer() . ',' . $answer->time_ceremony() . ']';
 				break;	
+
 			case 'picture':
-				return '[' . $answer->picture() . ']';
+				return '[' . $answer->gotAnswer() . ',' . $answer->picture() . ']';
 				break;
 			case 'disturb':
 				return '[' . $answer->disturb() . ']';

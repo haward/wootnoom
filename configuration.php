@@ -14,6 +14,10 @@ $CONFIGURATION =  array
 		'เวลา',
 		'เริ่มงาน',
 	),
+	'church_info' => array(
+		'โบส',
+		'church',
+	),
 	'disturb' => array(
 		'ควาย',
 		'โง่',

@@ -6,14 +6,10 @@
 // Report simple running errors
 //error_reporting(E_ERROR);
 require_once ("configuration.php");
-//require_once ("ahocorasick.php");
 require_once("util.php");
 
 $util = new Util($CONFIGURATION);
 
-
-//echo $answer_message;
-//exit;
 
 $access_token = '4kQ/BkzMwQdHPsK3ndXIuAVuRlkljv89ikV0SlSRW+bgPOfmmm+nS47ZtN0okz8s7+Bad4yFcH/CibvXITr7qSS+vTTZE35Zoq5KtwtvkW0x1g9OGpG/fOM33rSEztsGqMWPyXZPYPHYjzCjiubdiQdB04t89/1O/w1cDnyilFU=';
 
@@ -33,15 +29,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			$answer_message = $util->getAnswer($text);
-			//$message_template = condition($text);
-			//print_r( $answer_message );
-
-			// Build message to reply back
-			/*$messages = [
-				'type' => 'text',
-				'text' => $text
-			];*/
-
+			
 			// Build message to reply back
 			$messages = json_decode($answer_message, true);
 
@@ -68,129 +56,3 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-
-//Select message
-function condition($text) {
-	switch ($text) {
-		case 'map':
-			return location_message();
-			break;
-
-		case 'info':
-			return template_message();
-			break;
-
-		case 'time':
-			return info_time();
-			break;
-		
-		default:
-			return '{
-				"type" : "text",
-				"text" : "Happy wedding"
-			}';
-			break;
-	}
-}
-
-
-function template_message() {
-	$msg = '{
-	  "type": "template",
-	  "altText": "this is a image carousel template",
-	  "template": {
-	      "type": "image_carousel",
-	      "columns": [
-	          {
-	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
-	            "action": {
-	              "type": "postback",
-	              "label": "Buy",
-	              "data": "action=buy&itemid=111"
-	            }
-	          },
-	          {
-	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
-	            "action": {
-	              "type": "message",
-	              "label": "Yes",
-	              "text": "yes"
-	            }
-	          },
-	          {
-	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
-	            "action": {
-	              "type": "uri",
-	              "label": "View detail",
-	              "uri": "http://example.com/page/222"
-	            }
-	          }
-	      ]
-	  }
-	}';
-
-	return $msg;
-}
-
-function info_map() {
-	return location_message();
-}
-
-function info_preview() {
-	$msg = '{
-	  "type": "template",
-	  "altText": "this is a image carousel template",
-	  "template": {
-	      "type": "image_carousel",
-	      "columns": [
-	          {
-	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
-	            "action": {
-	              "type": "postback",
-	              "label": "Buy",
-	              "data": "action=buy&itemid=111"
-	            }
-	          },
-	          {
-	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
-	            "action": {
-	              "type": "message",
-	              "label": "Yes",
-	              "text": "yes"
-	            }
-	          },
-	          {
-	            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
-	            "action": {
-	              "type": "uri",
-	              "label": "View detail",
-	              "uri": "http://example.com/page/222"
-	            }
-	          }
-	      ]
-	  }
-	}';
-
-	return $msg;
-}
-
-function info_time() {
-	$msg = '{
-		"type" : "text",
-		"text" : "3rd December 2017, at 12:00 noon"
-	}';
-	return $msg;
-}
-
-function location_message() {
-	$msg = '{
-	    "type": "location",
-	    "title": "Buddy Oriental Riverside hotel",
-	    "address": "At Song-Fung-Klong restaurant, Buddy Oriental Riverside hotel, Parkkred, Nontaburi",
-	    "latitude": 13.927917,
-	    "longitude": 100.5006025
-	}';
-
-	return $msg;
-}
-echo "OK";

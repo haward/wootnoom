@@ -53,8 +53,30 @@ class Answer {
 		return $msg;
 	}
 
-	function map() {
-		$msg = '{
+	function map_church() {
+		$msg = '
+		{
+			"type" : "text",
+			"text" : "Church"
+		},
+		{
+		    "type": "location",
+		    "title": "Santa Cruz Church",
+		    "address": "Thesaban Sai 1, Thon Buri, Bangkok Pak Klong Talard Pier",
+		    "latitude": 13.738994,
+		    "longitude": 100.493801
+		}';
+
+		return $msg;
+	}
+
+	function map_ceremony() {
+		$msg = '
+		{
+			"type" : "text",
+			"text" : "Wedding Ceremony"
+		},
+		{
 		    "type": "location",
 		    "title": "Buddy Oriental Riverside hotel",
 		    "address": "At Song-Fung-Klong restaurant, Buddy Oriental Riverside hotel, Parkkred, Nontaburi",
@@ -65,12 +87,29 @@ class Answer {
 		return $msg;
 	}
 
-	function time() {
+	function time_church() {
 
 		$msgs = array(
-			'3rd December 2017, at 12:00 noon',
-			'วันที่ 3 ธันวาคม 2560 เวลา 12:00 ตอนเที่ยงตรงนะครับ',
-			'งานแต่ง ที่ 3 ธันวาคม 2560 เวลา เที่ยงตรงครับ'
+			'Church: 2 December 2017, at 14:00 noon',
+			'งานโบสถ์: วันที่ 2 ธันวาคม 2560 เวลา 14:00 นะครับ',
+			'งานโบสถ์: งานแต่ง ที่ 2 ธันวาคม 2560 เวลา บ่ายสองครับ'
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+
+		return $msg;
+	}
+	
+
+	function time_ceremony() {
+
+		$msgs = array(
+			'Wedding Ceremony: 3rd December 2017, at 12:00 noon',
+			'งานแต่ง: วันที่ 3 ธันวาคม 2560 เวลา 12:00 ตอนเที่ยงตรงนะครับ',
+			'งานแต่ง: ที่ 3 ธันวาคม 2560 เวลา เที่ยงตรงครับ'
 		);
 
 		$msg = '{
@@ -89,27 +128,24 @@ class Answer {
 		      "type": "image_carousel",
 		      "columns": [
 		          {
-		            "imageUrl": "https://wootnoom.herokuapp.com/media/pic1.jpg",
-		            "action": {
-		              "type": "postback",
-		              "label": "Buy",
-		              "data": "action=buy&itemid=111"
-		            }
-		          },
-		          {
-		            "imageUrl": "https://wootnoom.herokuapp.com/media/pic2.jpg",
+		            "imageUrl": "https://wootnoom.herokuapp.com/media/w5.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "Yes",
-		              "text": "yes"
+		              "label": "งานแต่ง",
 		            }
 		          },
 		          {
-		            "imageUrl": "https://wootnoom.herokuapp.com/media/pic3.jpg",
+		            "imageUrl": "https://wootnoom.herokuapp.com/media/w1.jpg",
 		            "action": {
-		              "type": "uri",
-		              "label": "View detail",
-		              "uri": "http://example.com/page/222"
+		              "type": "message",
+		              "label": "เตรียมงาน",
+		            }
+		          },
+		          {
+		            "imageUrl": "https://wootnoom.herokuapp.com/media/w2.jpg",
+		            "action": {
+		              "type": "message",
+		              "label": "เตรียมงาน",
 		            }
 		          }
 		      ]
