@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			$answer_message = $util->getAnswer($text);
-			
+			//echo $answer_message;
 			// Build message to reply back
 			$messages = json_decode($answer_message, true);
 
@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 				'messages' => $messages,
 			];
 			$post = json_encode($data);
-			echo $post;
+			//echo $post;
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);

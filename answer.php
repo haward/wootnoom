@@ -131,21 +131,21 @@ class Answer {
 		            "imageUrl": "https://wootnoom.herokuapp.com/media/w5.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "งานแต่ง",
+		              "label": "งานแต่ง"
 		            }
 		          },
 		          {
 		            "imageUrl": "https://wootnoom.herokuapp.com/media/w1.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "เตรียมงาน",
+		              "label": "เตรียมงาน"
 		            }
 		          },
 		          {
 		            "imageUrl": "https://wootnoom.herokuapp.com/media/w2.jpg",
 		            "action": {
 		              "type": "message",
-		              "label": "เตรียมงาน",
+		              "label": "เตรียมงาน"
 		            }
 		          }
 		      ]

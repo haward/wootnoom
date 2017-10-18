@@ -12,7 +12,7 @@ require_once("util.php");
 $util = new Util($CONFIGURATION);
 
 //$text = "ภาพ และแผนที่";
-$text = "dfds";
+$text = "image";
 
 $answer_message = $util->getAnswer($text);
 	//$message_template = condition($text);
