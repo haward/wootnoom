@@ -1,8 +1,10 @@
 <?php
 
 
-require_once ("libs/ahocorasick.php");
+
+require_once ("libs/MultiStringMatcher.php");
 require_once ("answer.php");
+use AhoCorasick\MultiStringMatcher;
 
 class Util {
 
@@ -15,15 +17,17 @@ class Util {
 	function mapToAction($text) {
 		$map = $this->build_mapp($this->configuration);
 		$result = $this->convert($text, $map);
-		//echo $result;
+		//echo 'result: ' . $result;
 		$actions = array();
 		$max = 1;
 		$action_name = '';
 
-		if($result !== '') {
-			$keys = explode(',', $result);
-			foreach($keys as $key) {
-				$action = $map[$key];
+		if(is_array($result) && count($result) > 0) {
+			//$keys = explode(',', $result);
+			//print_r($result);
+			//exit;
+			foreach($result as $value) {
+				$action = $map[$value[1]];
 				if(isset($actions[$action])) {
 					$actions[$action]++;
 
@@ -70,14 +74,24 @@ class Util {
 
 
 	private function convert($text, $map) {
-		$tree = new Ahocorasick\Ahocorasick();
-		//echo 'text: ' . $text . '<br>';
+
+		$keys = array();
 		foreach($map as $key => $action) {
-		//	echo 'key: ' . $key . ' <br>';
+			$keys[] = $key;
+		}
+
+		$keywords = new MultiStringMatcher( $keys );
+		return $keywords->searchIn( $text );
+
+
+		/*$tree = new Ahocorasick\Ahocorasick();
+		echo 'text: ' . $text . '<br>';
+		foreach($map as $key => $action) {
+			echo 'key: ' . $key . ' <br>';
 			$tree->add($key);
 		}
 		
-		return $tree->match($text);
+		return $tree->match($text);*/
 	}
 
 	private function build_mapp($configuration) {

@@ -1,10 +1,10 @@
 <?php
 
 // Turn off all error reporting
-error_reporting(0);
+//error_reporting(0);
 
 // Report simple running errors
-error_reporting(E_ERROR);
+//error_reporting(E_ERROR);
 require_once ("configuration.php");
 //require_once ("ahocorasick.php");
 require_once("util.php");
@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 
 			$answer_message = $util->getAnswer($text);
 			//$message_template = condition($text);
-			//echo $answer_message;
+		echo $answer_message;
 
 			// Build message to reply back
 			/*$messages = [

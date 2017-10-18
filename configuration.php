@@ -15,6 +15,7 @@ $CONFIGURATION =  array
 	'picture' => array(
 		'picture',
 		'รูป',
+		'ภาพ',
 		'image',
 	),
 );
