@@ -17,7 +17,7 @@ class Util {
 	function mapToAction($text) {
 		$map = $this->build_mapp($this->configuration);
 		$result = $this->convert($text, $map);
-		//echo 'result: ' . $result;
+		print_r($result);
 		$actions = array();
 		$max = 1;
 		$action_name = '';
@@ -51,7 +51,7 @@ class Util {
 
 	public function getAnswer($text) {
 		$action = $this->mapToAction($text);
-		
+		echo 'action : ' . $action;
 		if($action == '') $action = 'no anwser';
 
 		$answer = new Answer();
@@ -80,7 +80,7 @@ class Util {
 				return '[' . $answer->theme() . ']';
 				break;
 
-			case 'church_park':
+			case 'ch_park':
 				return '[' . $answer->church_park() . ']';
 				break;
 

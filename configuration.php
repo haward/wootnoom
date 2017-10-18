@@ -31,8 +31,8 @@ $CONFIGURATION =  array
 		'ชุด',
 		'ใส่อะไร',
 	),
-	'church_park' => array(
-		'church_park',
+	'ch_park' => array(
+		'ch_park',
 	),
 	'park' => array(
 		'จอดรถ',
