@@ -62,9 +62,23 @@ class Answer {
 	
 	function church_park() {
 		$msgs = array(
-			'จอดได้รอบโบส Santa Cruz Church เลยครับ',
+			'จอดได้รอบโบสถ์ Santa Cruz Church เลยครับ',
 			'จอดที่ ลาดจอดรอบโบสถ์ Santa Cruz Church เลยครับ',
 			'ลานรอบๆ Santa Cruz Church เลยครับ',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+		return $msg;
+	}
+
+	function park() {
+		$msgs = array(
+			'จอดที่โรงแรมเลยครับที่จอดรถมีเยอะมาก',
+			'ด้านหน้าโรงแรมมีที่จอดรถเยอะมากเลยครับ',
+			'ข้างๆ ร้านอาหารสองฝั่งคลองเลยครับ',
 		);
 
 		$msg = '{
