@@ -51,7 +51,7 @@ class Util {
 
 	public function getAnswer($text) {
 		$action = $this->mapToAction($text);
-		
+
 		if($action == '') $action = 'info';
 
 		$answer = new Answer();
@@ -73,7 +73,7 @@ class Util {
 				break;	
 
 			case 'picture':
-				return '[' . $answer->gotAnswer() . ',' . $answer->picture() . ']';
+				return '[' . $answer->picture() . ']';
 				break;
 			case 'disturb':
 				return '[' . $answer->disturb() . ']';
