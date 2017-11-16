@@ -88,5 +88,7 @@ $CONFIGURATION =  array
 		'สวัสดี',
 		'hello',
 		'หวัดดี',
+		'hi',
+		'aloha',
 	),
 );
