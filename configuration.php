@@ -14,6 +14,8 @@ $CONFIGURATION =  array
 	'time' => array(
 		'time',
 		'เวลา',
+		'เมื่อไร',
+		'กำหนดการ',
 		'เริ่มงาน',
 		'งานเริ่ม',
 	),
@@ -37,6 +39,7 @@ $CONFIGURATION =  array
 	'food' => array(
 		'food',
 		'อาหาร',
+		'ทาน',
 		'ของกิน',
 	),
 	'park' => array(
