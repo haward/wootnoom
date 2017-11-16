@@ -20,6 +20,22 @@ class Answer {
 		return $msg;
 	}
 
+	function hello() {
+		$msgs = array(
+			'สวัสดีครับ',
+			'Hello',
+			'สวัสดีครับ อยากรู้ข้อมูลอะไรถามได้ครับ',
+			'Hi',
+		);
+
+		$msg = '{
+			"type" : "text",
+			"text" : "' . $msgs[rand(0, count($msgs) - 1)] . '"
+		}';
+
+		return $msg;
+	}
+
 	function disturb() {
 
 		$msgs = array(

@@ -84,4 +84,9 @@ $CONFIGURATION =  array
 		'image',
 		'รุปภาพ',
 	),
+	'hello' => array(
+		'สวัสดี',
+		'hello',
+		'หวัดดี',
+	),
 );

@@ -101,6 +101,10 @@ class Util {
 				return '[' . $answer->park() . ']';
 				break;
 
+			case 'hello':
+				return '[' . $answer->hello() . ']';
+				break;
+
 			case 'disturb':
 				return '[' . $answer->disturb() . ']';
 				break;
